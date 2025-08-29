@@ -5,24 +5,29 @@ export const App = () => {
   const [count, setCount] = useState(0);
 
   const addOne = () => {
-    setCount(prev => prev + 1);
+    let newValue;
+    setCount(prev => {
+      newValue = prev + 1;
+      return newValue;
+    });
+    return newValue;
   };
 
   const add100 = () => {
-    setCount(prev => prev + 100);
+    let newValue;
+    setCount(prev => {
+      newValue = prev + 100;
+      return newValue;
+    });
+    return newValue;
   };
 
   // DON'T change the code below
   const increase = () => {
-    setCount(prev => {
-      const newValue = prev + 1;
-
-      if (newValue % 5 === 0) {
-        return newValue + 100;
-      }
-
-      return newValue;
-    });
+    const newValue = addOne();
+    if (newValue % 5 === 0) {
+      add100();               
+    }
   };
 
   return (
