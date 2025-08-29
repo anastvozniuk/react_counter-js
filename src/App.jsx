@@ -14,14 +14,13 @@ export const App = () => {
 
   // DON'T change the code below
   const increase = () => {
-    addOne();
+
     setCount(prev => {
-      const next = prev;
-
+      const next = prev + 1; // спочатку додаємо 1
       if (next % 5 === 0) {
-        return next + 100;
+        return next + 100;   // якщо кратне 5, додаємо 100
       }
-
+      
       return next;
     });
   };
